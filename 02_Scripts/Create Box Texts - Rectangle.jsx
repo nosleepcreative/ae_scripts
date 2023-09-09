@@ -1,12 +1,10 @@
 // Function to create rows of BoxText layers
-// Function to create rows of BoxText layers
-function createTextRows(circleDiameter, numRows, userText) {
+function createTextRows(rectangleWidth, rectangleHeight, numRows, userText) {
     // Check if a composition is active
     if (app.project.activeItem && app.project.activeItem instanceof CompItem) {
 
         // Base settings
-        var rowHeight = 100;
-        var myRadius = circleDiameter / 2;
+        var boxHeight = 100;
         var rowSpacing = 20;
 
         // Get the active composition
@@ -14,26 +12,17 @@ function createTextRows(circleDiameter, numRows, userText) {
         var compWidth = comp.width;
         var compHeight = comp.height;
 
-        // Create a null layer to serve as the center
-        // var nullLayer = comp.layers.addNull();
-        // nullLayer.name = "Center Null";
-
-
         // Loop to create rows of BoxText layers
         for (var i = 0; i < numRows; i++) {
-            // Calculate row width
-            var rowNum = ((i + 0.5) / numRows);
-            var distanceFromCenter = rowNum * circleDiameter - myRadius;
-            var chordLength = 2 * Math.sqrt((Math.pow(myRadius, 2) - Math.pow(distanceFromCenter, 2)))
 
             // Create a new text box
-            var textBox = comp.layers.addBoxText([chordLength, rowHeight]);
+            var textBox = comp.layers.addBoxText([rectangleWidth, boxHeight]);
 
             // Set the name of the text box (you can modify this as needed)
             textBox.name = "Row " + (i + 1);
 
             // Calculate the position for each row
-            var yPos = i / numRows * (circleDiameter + rowSpacing); // Adjust the spacing between rows as needed
+            var yPos = i / numRows * (rectangleHeight + rowSpacing); // Adjust the spacing between rows as needed
 
             // Position the text box at the calculated Y position
             textBox.property("Position").setValue([compWidth / 2, yPos]);
@@ -51,21 +40,24 @@ function createTextRows(circleDiameter, numRows, userText) {
 }
 
 // Prompt the user for the diameter and number of rows
-var circleDiameterInput = prompt("Enter the circle diameter (maximum width of each row):", "1000");
+var rectangleWidthInput = prompt("Enter the rectangle Width", "1000");
+var rectangleHeightInput = prompt("Enter the rectangle Height", "1000");
+
 var numRowsInput = prompt("Enter the number of rows:", "10");
-var userText = prompt("Enter Text", "BEYOND THE FRAME BEYOND THE FRAME BEYOND THE FRAME BEYOND THE FRAME BEYOND THE FRAME");
+var userText = prompt("Enter Text", "MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA MUDA");
 
 // Convert user input to numbers
-var circleDiameter = parseFloat(circleDiameterInput);
+var rectangleWidth = parseFloat(rectangleWidthInput);
+var rectangleHeight= parseFloat(rectangleHeightInput);
 var numRows = parseFloat(numRowsInput);
 
 // Check if the user canceled the prompts or entered invalid values
-if (!isNaN(circleDiameter) && !isNaN(numRows)) {
+if (!isNaN(rectangleWidth) && !isNaN(rectangleHeight) && !isNaN(numRows)) {
     // Use app.beginUndoGroup() to create an undo group
     app.beginUndoGroup("Create Text Rows");
 
     // Call the createTextRows() function to create the rows with user-provided values
-    createTextRows(circleDiameter, numRows, userText);
+    createTextRows(rectangleWidth,rectangleHeight, numRows, userText);
 
     // Use app.endUndoGroup() to end the undo group
     app.endUndoGroup();
