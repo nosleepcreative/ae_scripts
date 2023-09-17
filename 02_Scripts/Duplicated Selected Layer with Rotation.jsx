@@ -4,7 +4,7 @@ if (app.project.activeItem && app.project.activeItem instanceof CompItem) {
     
     // Check if there is at least one layer in the composition
     if (myComp.numLayers > 0) {
-        var thisLayer = myComp.layer(1);
+        var thisLayer = myComp.selectedLayers[0];
         var myCounter = 0;
         
         // Loop
