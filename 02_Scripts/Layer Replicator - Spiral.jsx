@@ -1,14 +1,16 @@
 /*
 Script Name: Layer Replicator - Spiral
 Description: 
+This script duplicates a selected layer based on user input and position them based in a spiral fashion
+
 -
-Author: Your Name
-Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
+Author: Desmond Du
+Website: https://duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
 Version: 1.0
 Date: September 15, 2023
 Copyright(c) 2023 nosleepcreative (Desmond Du). All rights reserved
 
-ALso see:
+Also see:
 https://madebyloop.co.uk/after-effects-scripts/spoke-radial-layer-repeater-after-effects/
 */
 
@@ -21,7 +23,7 @@ var compHeight = comp.height;
 var centerX = compWidth/2;
 var centerY = compHeight/2;
 
-
+app.beginUndoGroup("Undo")
 // Loop to create linear
 function duplicateAndSpiral(layer, copies, radius, depth, rotateLayer) {
     // Loop through the number of copies
@@ -38,11 +40,13 @@ function duplicateAndSpiral(layer, copies, radius, depth, rotateLayer) {
         // Duplicate the layer
         var duplicateLayer = layer.duplicate();
         
-        // Set the duplicated layer's position
         duplicateLayer.position.setValue([x, y, z]);
-        
-        // Set the duplicated layer's rotation
         duplicateLayer.rotation.setValue(rotationAngle);
+        // duplicateLayer.rotationY.setValue(rotationAngle);
+        // duplicateLayer.rotationX.setValue(rotationAngle);
+
+
+
     }
 }
 
@@ -51,7 +55,6 @@ function duplicateAndSpiral(layer, copies, radius, depth, rotateLayer) {
 var copiesInput = prompt("Enter the number of copies", "15");
 var radiusInput = prompt("Enter the Radius", "1000");
 var depthInput = prompt("Enter the depth", "1000");
-
 
 
 duplicateAndSpiral(mySelection,copiesInput,radiusInput,depthInput,1);

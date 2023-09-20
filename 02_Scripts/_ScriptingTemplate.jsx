@@ -21,3 +21,12 @@ Notes:
 - Mention if there are known issues or limitations.
 - Provide contact information for support or feedback.
 */
+
+// Cheatsheet
+// basic setup
+var comp = app.project.activeItem;
+var mySelection = comp.selectedLayers[0];
+var compWidth = comp.width;
+var compHeight = comp.height;
+var centerX = compWidth/2;
+var centerY = compHeight/2;
