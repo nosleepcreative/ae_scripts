@@ -30,3 +30,5 @@ var compWidth = comp.width;
 var compHeight = comp.height;
 var centerX = compWidth/2;
 var centerY = compHeight/2;
+
+app.beginUndoGroup("Undo")

@@ -27,7 +27,7 @@ function duplicateTransform(layer, rows, columns, spacing) {
     for (var i = 0; i < rows; i++) {
         var y = layer.position.value[1] + spacing * i;
 
-        // Loop through the number of columns
+        // Loop through the number of columns0
         for (var j = 0; j < columns; j++) {
             var x = layer.position.value[0] + spacing * j;
             var duplicateLayer = layer.duplicate();
