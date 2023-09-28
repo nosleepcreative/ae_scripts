@@ -16,7 +16,3 @@ if (app.project.selection.length > 0) {
         else app.project.items[i].selected = false;
     }
 }
-
-
-// NEXT UI  Put them in a folder
-// delete all empty folders
