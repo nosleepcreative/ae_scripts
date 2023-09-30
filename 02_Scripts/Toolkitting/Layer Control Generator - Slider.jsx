@@ -1,5 +1,7 @@
-app.beginUndoGroup("Create Controls and Opacity Expression");
+// Generates a control layer and slider control for managing layer visibility.
+// Also, make the slider control into Essential Properties
 
+app.beginUndoGroup("Create Controls and Opacity Expression");
 
 function addToMotionGraphicsTemplate(comp, property) {
     if (property.propertyGroup(1).name === "Effects") {
@@ -14,10 +16,16 @@ try {
     // Step 1: Create a null called "Controls"
     var controlsNull = app.project.activeItem.layers.addNull();
     controlsNull.name = "Controls";
+    controlsNull.guideLayer = true;
+    controlsNull.label = 9;
+    controlsNull.moveToEnd();
 
+    markerComment = "SELECT BACKGROUND HERE";
+    
     // Step 2: Create a slider control called "Selection"
     var sliderEffect = controlsNull.Effects.addProperty("ADBE Slider Control");
     sliderEffect.name = "Selection";
+    sliderEffect("Slider").setValue(1);
 
     // Step 3: Add the slider control as an Essential Property
     addToMotionGraphicsTemplate(app.project.activeItem,sliderEffect)

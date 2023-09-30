@@ -1,14 +1,18 @@
-// Get the selected layer
-var layer = app.project.activeItem.selectedLayers[0];
-app.beginUndoGroup("dataMerger");
+// This script duplicate selected layer and change the text input essential properties based on the user's array values.
 
-// Array of values
+
+// Replace array values with strings
 values = [
   "LINE 01",
   "LINE 02",
   "LINE 03",
-
   ]
+
+// Get the selected layer
+var layer = app.project.activeItem.selectedLayers[0];
+app.beginUndoGroup("dataMerger");
+
+
 // Iterate through the array and update the text input property
 for (var i = 0; i < values.length; i++) {
   // Get the value from the array
