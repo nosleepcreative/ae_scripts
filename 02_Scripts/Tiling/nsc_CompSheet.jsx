@@ -1,5 +1,5 @@
 /* nsc_CompSheet.jsx
-Copyright(c) 2023 nosleepcreative (Desmond Du). All rights reserved
+Copyright(c) 2023 NoSleepCreative (Desmond Du). All rights reserved.
 Website: duitbetter.com
 
 Name: nsc_CompSheet
@@ -10,7 +10,7 @@ This script tiles all layers in a composition into a grid.
 The number of columns can be changed in the Start Tile Null Layer.
 
 Instructions:
-Simply run the script on a composition with your precomps, 
+Simply run the script on a composition with your layers, 
 and it will inject the expressions into the position and scale parameters. 
 Then go to the Effects panel of the first null layer, and change the slider value for Columns.
 */
@@ -24,8 +24,6 @@ var gridPos = '\ // variable setting \
 var controlLayer = thisComp.layer("Start Tile");\
 var numColumns = Math.floor(thisComp.layer("Start Tile").effect("Columns")("Slider").value);\
 var myGutter = Math.floor(thisComp.layer("Start Tile").effect("Gutter")("Slider").value);\
-var myMarginsX = Math.floor(thisComp.layer("Start Tile").effect("MarginsX")("Slider").value);\
-var myMarginsY = Math.floor(thisComp.layer("Start Tile").effect("MarginsY")("Slider").value);\
 \
 // Grid Cell Indexing\
 var tileIndex = index - controlLayer.index-1;\
@@ -75,10 +73,10 @@ myColumns.name = "Columns"
 myColumns.property(1).setValue(5);
 var myGutter = myNull.property("Effects").addProperty("Slider Control");
 myGutter.name = "Gutter"
-var myMarginsX = myNull.property("Effects").addProperty("Slider Control");
-myMarginsX.name = "MarginsX"
-var myMarginsY = myNull.property("Effects").addProperty("Slider Control");
-myMarginsY.name = "MarginsY"
+// var myMarginsX = myNull.property("Effects").addProperty("Slider Control");
+// myMarginsX.name = "MarginsX"
+// var myMarginsY = myNull.property("Effects").addProperty("Slider Control");
+// myMarginsY.name = "MarginsY"
 
 // Create End tile null layer
 
