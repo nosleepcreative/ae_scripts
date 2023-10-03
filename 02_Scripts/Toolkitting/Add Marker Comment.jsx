@@ -1,5 +1,5 @@
 // Prompt the user for a marker comment
-var markerComment = prompt("Enter the marker comment:", "CHANGE TEXT HERE");
+var markerComment = prompt("Enter the marker comment:", "REPLACE WITH FOOTAGE/GFX");
 
 // Get the selected layers
 var selectedLayers = app.project.activeItem.selectedLayers;
@@ -11,3 +11,4 @@ for (var i = 0; i < selectedLayers.length; i++) {
 }
 
 
+i
