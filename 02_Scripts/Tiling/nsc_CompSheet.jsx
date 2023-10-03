@@ -1,8 +1,8 @@
-/* nsc_CompSheet.jsx
+/* nsc_LayersToGrid.jsx
 Copyright(c) 2023 NoSleepCreative (Desmond Du). All rights reserved.
 Website: duitbetter.com
 
-Name: nsc_CompSheet
+Name: nsc_LayersToGrid
 Version.1.0
 
 Description:
@@ -79,7 +79,6 @@ myGutter.name = "Gutter"
 // myMarginsY.name = "MarginsY"
 
 // Create End tile null layer
-
 var myNull2 = myComp.layers.addNull();
 myNull2.guideLayer = true;
 myNull2.label = 14;
