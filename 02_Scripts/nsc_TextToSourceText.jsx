@@ -3,9 +3,12 @@ Script Name: nsc_TextToEProps
 Description: This script duplicates a selected text layer and updates the source text of the Essential Property "Text Input" based on user-provided text.
 Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
-Version: 1.1
+Version: 1.2
 Date: October 12, 2023
 Copyright (c) 2023 nosleepcreative (Desmond Du). All rights reserved
+
+Change Log
+v1.2. Added precomp button and function
 */
 
 // DIALOG
@@ -50,6 +53,11 @@ button0.text = "Create text layers";
 button0.alignment = ["left", "top"];
 button0.onClick = readwrite;
 
+var button1 = group1.add("button", undefined, undefined, {name: "button1"});
+button1.text = "Create Compositions";
+button1.alignment = ["left", "top"];
+button1.onClick = readwriteComps;
+
 dialog.show();
 
 // Function to create text layers
@@ -69,6 +77,46 @@ function readwrite() {
 
             // Change Source Text
             var textProp = duplicatedLayer.property("Source Text");
+            var textDocument = textProp.value;
+            textDocument.text = value;
+            textProp.setValue(textDocument);
+        }
+    } else {
+        for (var i = 0; i < values.length; i++) {
+            var value = values[i];
+            var duplicatedLayer = layer.duplicate();
+            duplicatedLayer.name = prefix + (i + 1);
+
+            // Change Essential Property - Text Input
+            var textInputProperty = duplicatedLayer.property("Essential Properties").property("Text Input");
+            textInputProperty.setValue(value);
+        }
+    }
+
+    app.endUndoGroup();
+    dialog.close();
+}
+// Function to create precomp
+function readwriteComps() {
+    app.beginUndoGroup("TextLayerGenerator");
+
+    var textContent = edittext1.text;
+    var values = textContent.split(/\n/);
+    var layer = app.project.activeItem.selectedLayers[0];
+    var prefix = prefixInput.text;
+
+    if (layer instanceof TextLayer) {
+        for (var i = 0; i < values.length; i++) {
+            var value = values[i];
+            layer.name = "Text"
+            // Duplicate comp
+            var activeComp = app.project.activeItem;
+            var duplicatedComp = activeComp.duplicate();
+            duplicatedComp.name = prefix + (i + 1);
+
+            // Change Source Text of the layer in duplicated
+            var textLayer = duplicatedComp.layer("Text"); // Change "Your Text Layer Name" to the actual name of your text layer
+            var textProp = textLayer.property("Source Text");
             var textDocument = textProp.value;
             textDocument.text = value;
             textProp.setValue(textDocument);
