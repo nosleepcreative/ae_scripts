@@ -1,5 +1,4 @@
 // Function to create rows of BoxText layers
-// Function to create rows of BoxText layers
 function createTextRows(circleDiameter, numRows, userText) {
     // Check if a composition is active
     if (app.project.activeItem && app.project.activeItem instanceof CompItem) {

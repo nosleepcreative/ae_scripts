@@ -26,4 +26,4 @@ for (var i = 0; i < selectedLayers.length; i++) {
         // Add a marker with the entered comment
         currentLayer.property("Marker").setValueAtTime(0, new MarkerValue(markerComment));
     }
-}u
+}

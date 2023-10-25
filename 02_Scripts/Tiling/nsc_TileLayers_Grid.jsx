@@ -12,7 +12,6 @@ specifc row and colums numbers
  */
 
 
-
 var myComp = app.project.activeItem;
 var myLayers = myComp.selectedLayers;
 var myCompSize = [myComp.width, myComp.height];

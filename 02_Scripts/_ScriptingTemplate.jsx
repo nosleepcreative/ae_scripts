@@ -5,15 +5,10 @@ Description:
 - Mention any key features or tasks it performs.
 - Provide context for its use and benefits.
 
-Instructions: 
-- Include step-by-step instructions on how to use the script.
-- Highlight any user inputs or settings that may be required.
-- Mention any specific requirements or dependencies.
-
-Author: Your Name
+Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
-Version: 1.0 (or specify the current version)
-Date: September 15, 2023 (or the date of the latest update)
+Version: 1.0 
+Date: September 15, 2023
 Copyright(c) 2023 nosleepcreative (Desmond Du). All rights reserved
 
 Notes:
@@ -22,7 +17,8 @@ Notes:
 - Provide contact information for support or feedback.
 */
 
-// Cheatsheet
+
+
 // basic setup
 var comp = app.project.activeItem;
 var mySelection = comp.selectedLayers[0];
@@ -32,3 +28,8 @@ var centerX = compWidth/2;
 var centerY = compHeight/2;
 
 app.beginUndoGroup("Undo")
+
+// Cheatsheet
+
+    // Selecting Color Properties
+    comp.selectedProperties[0]("Color").value
