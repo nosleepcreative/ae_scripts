@@ -43,8 +43,8 @@ heightInput.characters = 6;
 promptDialog.add("statictext", undefined, "Text Content:");
 var textInput = promptDialog.add('edittext {properties: {name: "edittext1", multiline: true, scrollable: true}}');
 textInput.text = "Line 1\rLine 2\rLine 3\rLine 4\rLine 5";
-textInput.preferredSize.width = 200;
-textInput.preferredSize.height = 200;
+textInput.preferredSize.width = 800;
+textInput.preferredSize.height = 400;
 
 // Composition prefix input
 promptDialog.add("statictext", undefined, "Composition Prefix:");
