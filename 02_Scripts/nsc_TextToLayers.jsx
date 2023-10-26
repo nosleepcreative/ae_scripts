@@ -1,5 +1,15 @@
-// DIALOG
-// ======
+/*
+Script Name: nsc_TextToLayers
+Description: 
+THe script splits the provided text by line breaks into individual text layers.
+
+Author: Desmond Du
+Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
+Version: 1.0
+Date: October 25, 2023
+Copyright (c) 2023 nosleepcreative (Desmond Du). All rights reserved
+*/
+
 var dialog = new Window("dialog");
 dialog.text = "Text Layer Generator";
 dialog.orientation = "column";
@@ -16,8 +26,8 @@ infoText.add("statictext", undefined, "Insert your text below. Each line will be
 
 var edittext1 = dialog.add('edittext {properties: {name: "edittext1", multiline: true, scrollable: true}}');
 edittext1.text = "Line 1\nLine 2\nLine 3\nLine 4\nLine 5";
-edittext1.preferredSize.width = 200;
-edittext1.preferredSize.height = 200;
+edittext1.preferredSize.width = 800;
+edittext1.preferredSize.height = 400;
 edittext1.alignment = ["center", "top"];
 
 var spacingGroup = dialog.add("group");

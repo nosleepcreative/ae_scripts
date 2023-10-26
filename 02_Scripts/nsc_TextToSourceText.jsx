@@ -1,14 +1,18 @@
 /*
-Script Name: nsc_TextToEProps
+Script Name: nsc_TextToSourceText
 Description: This script duplicates a selected text layer and updates the source text of the Essential Property "Text Input" based on user-provided text.
 Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
-Version: 1.2
-Date: October 12, 2023
+Version: 1.3
+Date: October 25, 2023
 Copyright (c) 2023 nosleepcreative (Desmond Du). All rights reserved
 
 Change Log
 v1.2. Added precomp button and function
+v1.3. Increase size of dialog box, text in comments, and versioning comps into a newly created folder 
+
+Future improvements
+- Add number padding, start number from user input
 */
 
 // DIALOG
@@ -38,8 +42,8 @@ prefixInput.characters = 20; // Adjust the number of characters as needed
 
 var edittext1 = dialog.add('edittext {properties: {name: "edittext1", multiline: true, scrollable: true}}');
 edittext1.text = "Line 1\nLine 2\nLine 3\nLine 4\nLine 5";
-edittext1.preferredSize.width = 200;
-edittext1.preferredSize.height = 200;
+edittext1.preferredSize.width = 800;
+edittext1.preferredSize.height = 400;
 edittext1.alignment = ["center", "top"];
 
 var group1 = dialog.add("group", undefined, {name: "group1"});
@@ -105,6 +109,9 @@ function readwriteComps() {
     var layer = app.project.activeItem.selectedLayers[0];
     var prefix = prefixInput.text;
 
+    // Create new folder
+    var myFolder = app.project.rootFolder.items.addFolder('_Versioning');
+
     if (layer instanceof TextLayer) {
         for (var i = 0; i < values.length; i++) {
             var value = values[i];
@@ -113,13 +120,17 @@ function readwriteComps() {
             var activeComp = app.project.activeItem;
             var duplicatedComp = activeComp.duplicate();
             duplicatedComp.name = prefix + (i + 1);
+            duplicatedComp.comment = value;
 
             // Change Source Text of the layer in duplicated
-            var textLayer = duplicatedComp.layer("Text"); // Change "Your Text Layer Name" to the actual name of your text layer
+            var textLayer = duplicatedComp.layer("Text"); 
             var textProp = textLayer.property("Source Text");
             var textDocument = textProp.value;
             textDocument.text = value;
             textProp.setValue(textDocument);
+            
+            // Move Item into Folder
+            duplicatedComp.parentFolder = myFolder;
         }
     } else {
         for (var i = 0; i < values.length; i++) {
@@ -132,6 +143,7 @@ function readwriteComps() {
             textInputProperty.setValue(value);
         }
     }
+
 
     app.endUndoGroup();
     dialog.close();
