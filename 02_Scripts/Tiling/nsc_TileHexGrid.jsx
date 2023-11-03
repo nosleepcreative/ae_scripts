@@ -2,7 +2,7 @@
 Copyright(c) 2019 nosleepcreative (Desmond Du). All rights reserved
 Website: nosleepcreative.com
 
-Name: HexTiler
+Name: nsc_TileHexGrid
 Version.1.0
 
 Description:
