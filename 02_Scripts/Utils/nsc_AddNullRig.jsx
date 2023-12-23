@@ -64,6 +64,7 @@ if (selectedLayers.length > 1) {
 var myNull = myComp.layers.addNull();
 myNull.name = "NULL_" + mySelection.name;
 myNull.label = 9;
+myNull.guideLayer = !myNull.guideLayer;
 myNull.position.setValue(myPosition);
 myNull.threeDLayer = mySelection.threeDLayer;
 
@@ -71,7 +72,7 @@ myNull.threeDLayer = mySelection.threeDLayer;
 mySelection.parent = myNull;
 
 // Add FFX from local directory
-var ffxFile = new File("C:/Users/Desmond/Documents/Adobe/After Effects 2023/User Presets/Behaviors/nsc_NullRig_v0.9.ffx");
+var ffxFile = new File("C:/Users/Desmond/Documents/Adobe/After Effects 2023/User Presets/Behaviors/nsc_NullRig.ffx");
 if (ffxFile.exists) {
     mySelection.applyPreset(ffxFile);
 } else {
