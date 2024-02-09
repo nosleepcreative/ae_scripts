@@ -1,6 +1,9 @@
 /*
 Script Name: Your Script Name
 Description: 
+This is a script for After Effects that allows you to build a working Carousel with one click. 
+There are 5 types of Carousel: Linear, Circular 2D, Circular 3D, Exponential and Path.
+
 - Briefly describe the primary function or purpose of your script.
 - Mention any key features or tasks it performs.
 - Provide context for its use and benefits.
@@ -14,6 +17,7 @@ Copyright(c) 2023 nosleepcreative (Desmond Du). All rights reserved
 Use Case:
 
 Also see:
+https://aescripts.com/carousel-xpress/
 
 Change Log:
 
@@ -31,9 +35,8 @@ var centerY = compHeight/2;
 
 app.beginUndoGroup("Undo")
 
-// Cheatsheet
 
-    // Selecting Color Properties
-    comp.selectedProperties[0]("Color").value
-
-
+// vertical carousel: selected layer attached to a newly created null "#LTC-(001)-Controller", 
+// add in preset to selected laye and controller
+// controls: spacing
+// mode: vertical, horizontal 3D

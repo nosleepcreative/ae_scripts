@@ -1,9 +1,8 @@
 /*
-Script Name: Your Script Name
+Script Name: nsc_AddNullRig
 Description: 
-- Briefly describe the primary function or purpose of your script.
-- Mention any key features or tasks it performs.
-- Provide context for its use and benefits.
+1. Create a Null Parent for selected layer
+2. Add Null Rig ffx from local directory
 
 Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
@@ -23,6 +22,9 @@ Future improvements:
 
 // basic setup
 var myComp = app.project.activeItem;
+var basePath = "C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/00.01 Toolbox/"
+var ffxName = "nsc_NullRig.ffx"
+var ffxPath = basePath+ ffxName
 
 // Ensure a composition is active
 if (!(myComp instanceof CompItem)) {
@@ -72,12 +74,16 @@ myNull.threeDLayer = mySelection.threeDLayer;
 mySelection.parent = myNull;
 
 // Add FFX from local directory
-var ffxFile = new File("C:/Users/Desmond/Documents/Adobe/After Effects 2023/User Presets/Behaviors/nsc_NullRig.ffx");
+var ffxFile = new File(ffxPath);
 if (ffxFile.exists) {
     mySelection.applyPreset(ffxFile);
 } else {
     alert("Preset file not found!");
 }
+
+// Trim to in and out
+myNull.inPoint = mySelection.inPoint;
+myNull.outPoint = mySelection.outPoint;
 
 // If the shift key is held when the script is launched
 if (ScriptUI.environment.keyboardState.shiftKey) {
