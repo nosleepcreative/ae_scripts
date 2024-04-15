@@ -10,9 +10,17 @@ Copyright (c) 2023 nosleepcreative (Desmond Du). All rights reserved
 Change Log
 v1.2. Added precomp button and function
 v1.3. Increase size of dialog box, text in comments, and versioning comps into a newly created folder 
+v1.3.1 Fixed MOGRT Versioning
+
 
 Future improvements
 - Add number padding, start number from user input
+- Allowed delimiter for multiple line versioning: Name Role
+- Select properties to source text
+- search for Versioning folder, else use it
+- create version folder based on where comp is, label folder cyan
+- include line break in text input
+
 */
 
 // DIALOG
@@ -134,13 +142,26 @@ function readwriteComps() {
         }
     } else {
         for (var i = 0; i < values.length; i++) {
+            // split text into multiple lines
             var value = values[i];
-            var duplicatedLayer = layer.duplicate();
-            duplicatedLayer.name = prefix + (i + 1);
+            var delimiter = "&&&"
+            var lines = value.split(delimiter);
 
-            // Change Essential Property - Text Input
-            var textInputProperty = duplicatedLayer.property("Essential Properties").property("Text Input");
-            textInputProperty.setValue(value);
+            layer.name = "Text"
+
+            // Duplicate comp
+            var activeComp = app.project.activeItem;
+            var duplicatedComp = activeComp.duplicate();
+            duplicatedComp.name = prefix + (i + 1) + "_" + values[i];
+            duplicatedComp.comment = value;
+
+            // Change Source Text of the layer in duplicated
+            var textLayer = duplicatedComp.layer("Text"); 
+            var textProp = textLayer.property("Essential Properties").property("Text Input");
+            textProp.setValue(value);
+
+            // Move Item into Folder
+            duplicatedComp.parentFolder = myFolder;
         }
     }
 

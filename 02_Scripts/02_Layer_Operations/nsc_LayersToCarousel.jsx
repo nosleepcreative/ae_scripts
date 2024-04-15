@@ -18,6 +18,7 @@ Use Case:
 
 Also see:
 https://aescripts.com/carousel-xpress/
+https://motionarray.com/after-effects-templates/carousel-kit/
 
 Change Log:
 

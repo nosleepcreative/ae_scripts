@@ -6,7 +6,7 @@ Description:
 
 Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
-Version: 1.0 
+Version: 1.01 
 Date: [DATE], 2023
 Copyright(c) 2023 nosleepcreative (Desmond Du). All rights reserved
 
@@ -15,8 +15,10 @@ Use Case:
 Also see:
 
 Change Log:
+v1.0.1 - 2024-02-14: Change name of Control Null to "NR-Controls-LayerName"
 
 Future improvements:
+- Change name to "NR-Controls-(001)"
 
 */
 
@@ -64,7 +66,7 @@ if (selectedLayers.length > 1) {
 
 // Create null
 var myNull = myComp.layers.addNull();
-myNull.name = "NULL_" + mySelection.name;
+myNull.name = "NR-Controls-" + mySelection.name;
 myNull.label = 9;
 myNull.guideLayer = !myNull.guideLayer;
 myNull.position.setValue(myPosition);

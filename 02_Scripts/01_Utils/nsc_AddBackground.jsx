@@ -22,6 +22,7 @@ Future improvements:
 var myComp = app.project.activeItem;
 var compWidth = myComp.width;
 var compHeight = myComp.height;
+var filePath = "C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/02.02 Backgrounds/BG - Base Rig.ffx"
 
 // Calculate the center coordinates of the composition
 var centerX = compWidth / 2;
@@ -54,7 +55,7 @@ shapeLayer.name = uniqueName;
 shapeLayer.moveToEnd();
 
 // Add FFX from local directory
-var ffxFile = new File("C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/02.02 Backgrounds/BG - Base Rig.ffx");
+var ffxFile = new File(filePath);
 if (ffxFile.exists) {
     shapeLayer.applyPreset(ffxFile);
 } else {
