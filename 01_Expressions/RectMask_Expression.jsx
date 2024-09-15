@@ -1,4 +1,4 @@
-//Rect Maks v1.3.1
+//Rect Mask v1.3.1
 
 // Get current mask's name, initialize the effect variable
 var maskName = thisProperty.propertyGroup(1).name;
@@ -33,6 +33,9 @@ var topRightRadius = fx("Top Right Corner (%)")/ 100 *cornerRadius;
 var bottomRightRadius = fx("Bottom Right Corner (%)")/ 100*cornerRadius;
 var bottomLeftRadius =  fx("Bottom Left Corner (%)")/ 100*cornerRadius;
 
+// Determine if the layer is a shape layer
+var isShapeLayer = thisLayer.content == "Contents";
+var center = isShapeLayer ? maskPosOffset : [thisLayer.width / 2 + maskPosOffset[0], thisLayer.height / 2 + maskPosOffset[1]];
 
 // Calculate the eight points of the beveled rectangle
 var vertices = [
@@ -62,7 +65,6 @@ vertices = vertices.map(function(point) {
     var rotated = rotatePoint(point, radians);
     return [rotated[0] + center[0], rotated[1] + center[1]];
 });
-
 inTangents = inTangents.map(t => rotatePoint(t, radians));
 outTangents = outTangents.map(t => rotatePoint(t, radians));
 

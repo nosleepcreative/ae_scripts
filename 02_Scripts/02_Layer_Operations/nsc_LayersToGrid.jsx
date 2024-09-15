@@ -18,10 +18,15 @@ Future improvements:
 2. normalize size if layers are different size and scale
 3. Fit to comp with padding
 4. Specify rows options
+
+2024.06.17, Joe:  Auto size the assets to evenly fill up the screen. 
+Ultimately I want to use video, but have to be able to adjust the position in each clip on each slide as well, because like you saw, the person sometimes gets cropped weirdly. 
+I'm using create mattes in Flex so going to see the easiest way to reposition them as they slide around.
+
 */
 
 
-var myComp = app.project.activeItem;
+var myComp = app.project.activeItem;3
 var myLayers = myComp.selectedLayers;
 var myCompSize = [myComp.width, myComp.height];
 

@@ -3,7 +3,7 @@ Script Name: nsc_TextToSourceText
 Description: This script duplicates a selected text layer and updates the source text of the Essential Property "Text Input" based on user-provided text.
 Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
-Version: 1.3
+Version: 1.3.2
 Date: October 25, 2023
 Copyright (c) 2023 nosleepcreative (Desmond Du). All rights reserved
 
@@ -11,7 +11,7 @@ Change Log
 v1.2. Added precomp button and function
 v1.3. Increase size of dialog box, text in comments, and versioning comps into a newly created folder 
 v1.3.1 Fixed MOGRT Versioning
-
+v1.3.2 Added variable EPText to specify Essential Props Text Property
 
 Future improvements
 - Add number padding, start number from user input
@@ -43,10 +43,16 @@ var prefixGroup = dialog.add("group");
 prefixGroup.orientation = "row";
 prefixGroup.alignChildren = ["left", "center"];
 prefixGroup.spacing = 10;
-
+// Row 1 
 prefixGroup.add("statictext", undefined, "Prefix for layer names:");
 var prefixInput = prefixGroup.add("edittext", undefined, "TOS_");
 prefixInput.characters = 20; // Adjust the number of characters as needed
+
+prefixGroup.add("statictext", undefined, "EP Name:");
+var PropNameInput = prefixGroup.add("edittext", undefined, "Text Input");
+prefixInput.characters = 20; // Adjust the number of characters as needed
+
+
 
 var edittext1 = dialog.add('edittext {properties: {name: "edittext1", multiline: true, scrollable: true}}');
 edittext1.text = "Line 1\nLine 2\nLine 3\nLine 4\nLine 5";
@@ -116,6 +122,7 @@ function readwriteComps() {
     var values = textContent.split(/\n/);
     var layer = app.project.activeItem.selectedLayers[0];
     var prefix = prefixInput.text;
+    var PropName = PropNameInput.text;
 
     // Create new folder
     var myFolder = app.project.rootFolder.items.addFolder('_Versioning');
@@ -157,7 +164,7 @@ function readwriteComps() {
 
             // Change Source Text of the layer in duplicated
             var textLayer = duplicatedComp.layer("Text"); 
-            var textProp = textLayer.property("Essential Properties").property("Text Input");
+            var textProp = textLayer.property("Essential Properties").property(PropName);
             textProp.setValue(value);
 
             // Move Item into Folder

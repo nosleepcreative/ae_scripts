@@ -39,7 +39,7 @@ if (app.project.activeItem instanceof CompItem) {
         selectedLayer.name = "REFERENCE EDIT";
         selectedLayer.label = 14;
         // Add FFX from local directory
-        var ffxFile = new File("C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/01.02 Utility - Guides/Set Reference Position.ffx");
+        var ffxFile = new File("C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/01.01 Utility/Set Reference Position.ffx");
         if (ffxFile.exists) {
             selectedLayer.applyPreset(ffxFile);
         } else {

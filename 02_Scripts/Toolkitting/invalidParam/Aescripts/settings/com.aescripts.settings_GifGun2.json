@@ -1,0 +1,10 @@
+{
+  "updatecheck.snoozeDate": "2024-06-18T21:10:46.548Z",
+  "aespOptions": {
+    "productVersion": "2.0.12",
+    "betaMode": false,
+    "customFlyoutMenuEntries": {
+      "xml": "<MenuItem Id=\"gg2debugpanel\" Label=\"Loading system panel status...\" Checked=\"false\"/>"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+import c4d
+from c4d.modules import mograph as mo
+import random
+
+def main() -> bool:
+    # Called when the effector is executed to set MoGraph data. Similar to EffectorData::ModifyObject in C++.
+    moData = c4d.modules.mograph.GeGetMoData(op)
+    if moData is None:
+        return False
+
+    cnt = moData.GetCount()
+    marr = moData.GetArray(c4d.MODATA_MATRIX)
+
+    hasField = op[c4d.FIELDS].HasContent()
+    fall = moData.GetFalloffs()
+    
+    # Color
+    carr = moData.GetArray(c4d.MODATA_COLOR) # Color Array
+   
+   
+   # carr[0] = c4d.Vector(0.5) # Gray Scale
+
+    for i in range(cnt):
+        r = random.random()
+        g = random.random() 
+        b = random.random()
+        carr[i] = c4d.Vector(r,g,b)
+    
+
+    moData.SetArray(c4d.MODATA_MATRIX, marr, hasField)
+    moData.SetArray(c4d.MODATA_COLOR, carr, hasField)# Update Color Array
+    return True

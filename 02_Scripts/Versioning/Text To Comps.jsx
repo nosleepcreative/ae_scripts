@@ -1,7 +1,7 @@
 /*
 Script Name: nsc_TextToComps
 Description: 
-THe script splits the provided text by line breaks and generates compositions with centered text layers, 
+The script splits the provided text by line breaks and generates compositions with centered text layers, 
 with each text layer drawn from an individual line of the provided text.
 
 Author: Desmond Du
