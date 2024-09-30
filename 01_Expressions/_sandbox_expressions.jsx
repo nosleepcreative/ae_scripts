@@ -1,3 +1,14 @@
+// ——————————————————————————————————————————————————————————————————————
+// Loop Out Source Text
+if (numKeys >1 && time > key(numKeys).time){
+t1 = key(1).time;
+t2 = key(numKeys).time;
+span = t2 - t1;
+delta = time - t2;
+t = delta%span;
+valueAtTime(t1 + t)
+}else
+value
 
 // ——————————————————————————————————————————————————————————————————————
 
