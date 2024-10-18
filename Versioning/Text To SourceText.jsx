@@ -1,6 +1,6 @@
 /*
 Script Name: nsc_TextToSourceText
-Description: This script duplicates a selected text layer and updates the source text of the Essential Property "Text Input" based on user-provided text.
+Description: This script duplicates a selected text layer and updates the source text of the Essential Property "Name" based on user-provided text.
 Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
 Version: 1.3.2
@@ -19,7 +19,7 @@ Future improvements
 - Select properties to source text
 - search for Versioning folder, else use it
 - create version folder based on where comp is, label folder cyan
-- include line break in text input
+- include line break in Name
 
 */
 
@@ -49,7 +49,7 @@ var prefixInput = prefixGroup.add("edittext", undefined, "TOS_");
 prefixInput.characters = 20; // Adjust the number of characters as needed
 
 prefixGroup.add("statictext", undefined, "EP Name:");
-var PropNameInput = prefixGroup.add("edittext", undefined, "Text Input");
+var PropNameInput = prefixGroup.add("edittext", undefined, "Name");
 prefixInput.characters = 20; // Adjust the number of characters as needed
 
 
@@ -105,8 +105,8 @@ function readwrite() {
             var duplicatedLayer = layer.duplicate();
             duplicatedLayer.name = prefix + (i + 1);
 
-            // Change Essential Property - Text Input
-            var textInputProperty = duplicatedLayer.property("Essential Properties").property("Text Input");
+            // Change Essential Property - Name
+            var textInputProperty = duplicatedLayer.property("Essential Properties").property("Name");
             textInputProperty.setValue(value);
         }
     }

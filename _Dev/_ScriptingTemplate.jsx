@@ -8,8 +8,8 @@ Description:
 Author: Desmond Du
 Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
 Version: 1.0 
-Date: [DATE], 2023
-Copyright(c) 2023 nosleepcreative (Desmond Du). All rights reserved
+Date: [DATE], 2024
+Copyright(c) 2024 nosleepcreative (Desmond Du). All rights reserved
 
 Use Case:
 

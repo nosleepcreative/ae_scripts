@@ -1,3 +1,35 @@
+/*  Layers To Grid.jsx
+Copyright(c) 2024 NoSleepCreative (Desmond Du). All rights reserved.
+Website: duitbetter.com
+
+Name: Layers To Grid
+Version.1.00
+
+Description:
+This script tiles selected layers in a composition into a grid with setting from the UI panel.
+
+Also see:
+- ASToolbox, James Zelasko
+    One of ASToolbox tools
+    https://github.com/Anti-Static/ASToolbox
+
+- pt_ContactSheet, Paul Tuersley: 
+    Dockable scriptUI, create contact sheet based on markers in active comp, also to be used with separate script pt_LayerMarkers.jsx.
+    https://aescripts.com/pt_contactsheet/
+
+- rd_CompSheet.jsx from rdscript_20170108 collection, Jeff Almasol (redefinery):
+    Creates a contact sheet based on a layer named " style frames" with markers. It employs precomps for each frame.
+     http://web.archive.org/web/20190305110031/http://redefinery.com/ae/scripts/rd_scripts_20170108.zip:
+     
+- Images Wall script, Motion Boutique
+
+
+Future Improvements
+- Add button to rig layers with expressions
+
+
+*/
+
 var panelGlobal = this;
 
 /*

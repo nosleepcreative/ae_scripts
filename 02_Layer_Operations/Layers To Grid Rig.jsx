@@ -1,9 +1,9 @@
-/* nsc_LayersToGrid.jsx
+/* Layers To Grid Rig.jsx
 Copyright(c) 2023 NoSleepCreative (Desmond Du). All rights reserved.
 Website: duitbetter.com
 
 Name: nsc_LayersToGrid
-Version.1.01
+Version.1.02
 
 Description:
 This script tiles all layers in a composition into a grid. 
@@ -31,7 +31,9 @@ Also see:
 
 
 Change Log
-v.1.01. Auto rename comp to "_CompSheet", create BG, added other similar scripts references
+v.1.01 Auto rename comp to "_CompSheet", create BG, added other similar scripts references
+v.1.02 Create Shape layers for Control layers
+
 */
 
 app.beginUndoGroup("CompTiler");
@@ -81,7 +83,7 @@ for (var i = 1; i <= myComp.numLayers; i++) {
 }
 
 // Create Start Tile null layer & Slider Effect
-var myNull = myComp.layers.addNull();
+var myNull = myComp.layers.addShape();
 myNull.name = "Start Tile";
 myNull.guideLayer = true;
 myNull.label = 14;
@@ -98,7 +100,7 @@ myGutter.name = "Gutter"
 //myGutter.property(1).setValue(10);
 
 // Create End tile null layer
-var myNull2 = myComp.layers.addNull();
+var myNull2 = myComp.layers.addShape();
 myNull2.guideLayer = true;
 myNull2.label = 14;
 myNull2.name = "End Tile";
@@ -108,13 +110,3 @@ myNull2.moveToEnd();
 myComp.name = "_CompSheet"
 myComp.label = 14;
 
-// Create a new BG shape
-var shapeLayer = myComp.layers.addShape();
-shapeLayer.name = "BG";
-
-var rectGroup = shapeLayer.property("Contents").addProperty("ADBE Vector Group");
-var rectPath = rectGroup.property("Contents").addProperty("ADBE Vector Shape - Rect");
-rectPath.property("Size").setValue([myComp.width, myComp.height]);
-var fill = rectGroup.property("Contents").addProperty("ADBE Vector Graphic - Fill");
-fill.property("Color").setValue([0, 0, 0]);  // RGB values for black
-shapeLayer.moveToEnd();
