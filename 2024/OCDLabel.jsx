@@ -22,6 +22,7 @@ Change Log:
 Future improvements:
 
 */
+var comp = app.project.activeItem;
 
 
 if (comp && comp instanceof CompItem) {

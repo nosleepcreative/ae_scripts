@@ -1,0 +1,325 @@
+{
+    "version": "3.1.0",
+    "iconsSize": "Medium",
+    "showTooltip": true,
+    "displayCategoryNames": true,
+    "minutesSaved": 401.473333333318,
+    "remainContextMenuOpened": true,
+    "topUsedTools": {
+        
+    },
+    "topSearch": {
+        
+    },
+    "workspaces": {
+        "1": {
+            "visibleCategories": {
+                "1": true,
+                "2": true,
+                "3": true,
+                "4": false,
+                "5": true,
+                "6": true,
+                "7": true,
+                "8": true,
+                "9": false,
+                "10": true,
+                "11": true,
+                "12": true
+            },
+            "favourites": [
+                {
+                    "type": "script",
+                    "id": 610809,
+                    "command": "C:\\Users\\Desmond\\Documents\\Adobe\\ae_scripts\\01_Utils\\Set Reference Edit.jsx",
+                    "icon": "",
+                    "name": "Set Reference Edit",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 576119,
+                    "command": "C:\\Users\\Desmond\\Documents\\Adobe\\ae_scripts\\01_Utils\\Make Guide Layer.jsx",
+                    "icon": "",
+                    "name": "Guide Layer",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 250128,
+                    "command": "C:\\Users\\Desmond\\Documents\\Adobe\\ae_scripts\\01_Utils\\Add Matte.jsx",
+                    "icon": "",
+                    "name": "Add Matte",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 271359,
+                    "command": "C:\\Users\\Desmond\\Documents\\Adobe\\ae_scripts\\01_Utils\\Add Background.jsx",
+                    "icon": "",
+                    "name": "Add BG",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "name": "Switch Comp BG Color",
+                    "command": "C:\\Users\\Desmond\\Documents\\Adobe\\ae_scripts\\02_Scripts\\01_Utils\\Switch Comp BG Color.jsx",
+                    "id": 368505,
+                    "icon": "",
+                    "color": ""
+                },
+                {
+                    "type": "tool",
+                    "id": 216,
+                    "command": "10-Text/Text-Reveal.jsxbin",
+                    "savedSeconds": 250,
+                    "name": "Text Reveal Animation",
+                    "icon": "",
+                    "color": "",
+                    "toolTip": "Creates a smooth text reveal and wipe animation on selected text layers with animatable options",
+                    "learnMore": "https://motionape.notion.site/Text-Reveal-Animation-5b187621c34b4de5981e774082056f74"
+                },
+                {
+                    "type": "script",
+                    "name": "Add Text - 2/3 Liners",
+                    "command": "C:\\Users\\Desmond\\Documents\\Adobe\\ae_scripts\\02_Scripts\\03_Text\\Add Text - 2 Liners.jsx",
+                    "id": 892443,
+                    "icon": "",
+                    "color": ""
+                },
+                {
+                    "type": "preset",
+                    "id": 321819,
+                    "command": "C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/03.02 Behaviors/A-1 Linear/Drift Scale.ffx",
+                    "icon": "",
+                    "name": "Drift Scale",
+                    "color": ""
+                },
+                {
+                    "type": "preset",
+                    "id": 862173,
+                    "command": "C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/00.01 Toolbox/Boxed Children.ffx",
+                    "icon": "",
+                    "name": "Boxed Children",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 761173,
+                    "command": "C:/Users/Desmond/Documents/Adobe/ae_scripts/03_Layer_Operations/Layers To Grid Rig.jsx",
+                    "icon": "",
+                    "name": "Layers To Grid Rig",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 948859,
+                    "command": "C:/Users/Desmond/Documents/Adobe/ae_scripts/03_Layer_Operations/Layers To Grid.jsx",
+                    "icon": "",
+                    "name": "Layers To Grid",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 257659,
+                    "command": "C:/Users/Desmond/Documents/Adobe/ae_scripts/2024/Label Layers.jsx",
+                    "icon": "",
+                    "name": "Label Layers",
+                    "color": ""
+                },
+                {
+                    "type": "preset",
+                    "id": 934658,
+                    "command": "C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/03.02 Behaviors/E-1 Effectors/Transform Effector.ffx",
+                    "icon": "",
+                    "name": "Transform Effector",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 776326,
+                    "command": "C:/Users/Desmond/Documents/Adobe/ae_scripts/02_Generators/Create Drop Shadow Shape.jsx",
+                    "icon": "",
+                    "name": "Create Shadow",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 259019,
+                    "command": "C:/Users/Desmond/Documents/Adobe/ae_scripts/2024/OCDLabel.jsx",
+                    "icon": "",
+                    "name": "OCD Label",
+                    "color": ""
+                }
+            ],
+            "visibleUserMenus": {
+                "0": false,
+                "1": false,
+                "2": false
+            }
+        },
+        "2": {
+            "visibleCategories": {
+                "1": true,
+                "2": true,
+                "3": true,
+                "4": true,
+                "5": true,
+                "6": true,
+                "7": true,
+                "8": true,
+                "9": true,
+                "10": true,
+                "11": true,
+                "12": true
+            },
+            "favourites": [
+                {
+                    "type": "scriptlet",
+                    "id": 966464,
+                    "command": "\"// Create an undo group\\napp.beginUndoGroup('Arrange Layers into Oval Rings');\\n\\n// Get the active composition\\nvar comp = app.project.activeItem;\\n\\n// Check if a composition is selected\\nif (comp !== null && comp instanceof CompItem) {\\n    // Get the selected layers\\n    var selectedLayers = comp.selectedLayers;\\n    var numLayers = selectedLayers.length;\\n\\n    // Prompt the user to input the width and height of the oval\\n    var widthInput = prompt(\\\"Please input the width of the oval\\\", 500);\\n    var heightInput = prompt(\\\"Please input the height of the oval\\\", 300);\\n\\n    // Convert the inputs to numbers (or use default values if the inputs are invalid)\\n    var width = isNaN(parseFloat(widthInput)) ? 800 : parseFloat(widthInput);\\n    var height = isNaN(parseFloat(heightInput)) ? 400 : parseFloat(heightInput);\\n\\n    // Define the center point of the oval ring\\n    var centerX = comp.width / 2;\\n    var centerY = comp.height / 2;\\n\\n    // Loop through each selected layer\\n    for (var i = 0; i < numLayers; i++) {\\n        var layer = selectedLayers[i];\\n\\n        // Calculate the angle for the current layer\\n        var angle = (i / numLayers) * 2 * Math.PI;\\n\\n        // Calculate the new position for the current layer with an oval shape\\n        var x = centerX + width * Math.cos(angle);\\n        var y = centerY + height * Math.sin(angle);\\n\\n        // Set the position of the current layer\\n        layer.position.setValue([x, y]);\\n    }\\n}\\n\\n// Close the undo group\\napp.endUndoGroup();\"",
+                    "icon": "",
+                    "name": "Layers to Ring",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 326327,
+                    "command": "C:/Users/Desmond/Documents/Adobe/ae_scripts/02_Scripts/Toolkitting/Props To EGFX.jsx",
+                    "icon": "",
+                    "name": "Props To EGFX",
+                    "color": ""
+                },
+                {
+                    "type": "script",
+                    "id": 350942,
+                    "command": "C:/Users/Desmond/Documents/Adobe/ae_scripts/02_Scripts/01_Utils/Properties To Controls - Single.jsx",
+                    "icon": "",
+                    "name": "Properties To Controls - Single",
+                    "color": ""
+                }
+            ],
+            "visibleUserMenus": {
+                "0": true,
+                "1": true,
+                "2": true
+            }
+        },
+        "3": {
+            "visibleCategories": {
+                "1": true,
+                "2": true,
+                "3": true,
+                "4": true,
+                "5": true,
+                "6": true,
+                "7": true,
+                "8": true,
+                "9": true,
+                "10": true,
+                "11": true,
+                "12": true
+            },
+            "favourites": [
+                
+            ],
+            "visibleUserMenus": {
+                "0": true,
+                "1": true,
+                "2": true
+            }
+        }
+    },
+    "customTooltip": true,
+    "overrideShortcutsFile": true,
+    "scriptFolders": [
+        
+    ],
+    "iconsFolder": "Monochrome",
+    "dateSinceSkipNotification": 0,
+    "currentWorkspace": 1,
+    "updateShownForVersion": "3.1.1",
+    "whatsNewVersion": "0.0.0",
+    "showKeyboardPanelAlert": true,
+    "searchShortcut": "Ctrl+Tab",
+    "firstStart": false,
+    "hiddenTools": {
+        "1": [
+            
+        ],
+        "2": [
+            
+        ],
+        "3": [
+            
+        ],
+        "4": [
+            
+        ],
+        "5": [
+            
+        ],
+        "6": [
+            
+        ],
+        "7": [
+            
+        ],
+        "8": [
+            
+        ],
+        "9": [
+            
+        ],
+        "10": [
+            
+        ],
+        "11": [
+            
+        ],
+        "12": [
+            
+        ]
+    },
+    "shortcuts": [
+        
+    ],
+    "showWarnings": {
+        "keyboardShortcuts": false
+    },
+    "userPanels": [
+        {
+            "index": 0,
+            "title": "User Panel - 1",
+            "name": "User Panel - 1",
+            "icon": "",
+            "color": "",
+            "items": [
+                
+            ],
+            "visible": true
+        },
+        {
+            "index": 1,
+            "title": "User Panel - 2",
+            "name": "User Panel - 2",
+            "icon": "",
+            "color": "",
+            "items": [
+                
+            ],
+            "visible": true
+        },
+        {
+            "index": 2,
+            "title": "User Panel - 3",
+            "name": "User Panel - 3",
+            "icon": "",
+            "color": "",
+            "items": [
+                
+            ],
+            "visible": true
+        }
+    ]
+}

@@ -58,11 +58,11 @@
             textLayer.position.setValue(textPosition);
 
             // Make sure the text layer is placed directly under the original layer
-            textLayer.moveBefore(layer);
+            //textLayer.moveBefore(layer);
 
             // Match the start time and duration of the new text layer to the original layer
-            textLayer.inPoint = layer.inPoint;
-            textLayer.outPoint = layer.outPoint;
+            //textLayer.inPoint = layer.inPoint;
+            //textLayer.outPoint = layer.outPoint;
 
             // Modify the text properties (font size, color, and font family)
             var textProp = textLayer.property("Source Text");
