@@ -106,7 +106,7 @@ function arrangeInGrid() {
         var scaleX = (cellWidth / layer.width) * 100;
         var scaleY = (cellHeight / layer.height) * 100;
         var scaleValue = Math.min(scaleX, scaleY);
-
+        layer.audioEnabled = false;
         layer.scale.setValue([scaleValue, scaleValue]);
     }
 

@@ -1,4 +1,4 @@
-//masterProperties_addProps_v1.jsx
+// Add selected properties as Essential Graphics Properties
 
 myComp = app.project.activeItem;
 myProps = myComp.selectedProperties;

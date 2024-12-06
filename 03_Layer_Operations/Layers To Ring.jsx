@@ -35,7 +35,7 @@ if (comp !== null && comp instanceof CompItem) {
 
     // Prompt the user to input the width and height of the oval
     var widthInput = prompt("Please input the width of the oval", 500);
-    var heightInput = prompt("Please input the height of the oval", 300);
+    var heightInput = prompt("Please input the height of the oval", 500);
 
     // Convert the inputs to numbers (or use default values if the inputs are invalid)
     var width = isNaN(parseFloat(widthInput)) ? 800 : parseFloat(widthInput);

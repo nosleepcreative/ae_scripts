@@ -1,0 +1,302 @@
+/* nsc_folderStructurer.jsx
+Copyright(c) 2019 nosleepcreative (Desmond Du). All rights reserved
+Website: nosleepcreative.com
+
+Name: nsc_folderStructurer
+Version.1.0
+
+Description:
+This scriptUI contains presets for folder structure for broadcast design that can be use consistently across the team
+
+Instructions:
+--
+*/
+
+// UI Building
+// =======
+var palette = buildUI(this); // palette points to function
+
+if (palette != null && palette instanceof Window) {
+    palette.show();
+}
+
+function buildUI(thisObject) {
+
+    if (thisObject instanceof Panel) {
+        var palette = thisObject;
+    } else {
+        var palette = new Window("palette", scriptTitle, undefined, {
+            resizeable: true
+        });
+    }
+
+    if (palette != null) {
+        palette.text = "nsc_folderStructurer_v01";
+        palette.preferredSize.width = 200;
+        palette.preferredSize.height = 200;
+        palette.orientation = "row";
+        palette.alignChildren = ["center", "top"];
+        palette.spacing = 10;
+        palette.margins = 16;
+
+        // GROUP1
+        // ======
+        var group1 = palette.add("group", undefined, {
+            name: "group1"
+        });
+        group1.orientation = "column";
+        group1.alignChildren = ["left", "center"];
+        group1.spacing = 10;
+        group1.margins = 0;
+
+        var button1 = group1.add("button", undefined, undefined, {
+            name: "button1"
+        });
+        button1.text = "small";
+
+        var button2 = group1.add("button", undefined, undefined, {
+            name: "button2"
+        });
+        button2.text = "DVFX";
+
+        // GROUP2
+        // ======
+        var group2 = palette.add("group", undefined, {
+            name: "group2"
+        });
+        group2.orientation = "column";
+        group2.alignChildren = ["left", "center"];
+        group2.spacing = 10;
+        group2.margins = 0;
+
+        var button3 = group2.add("button", undefined, undefined, {
+            name: "button3"
+        });
+        button3.text = "social";
+
+        var button4 = group2.add("button", undefined, undefined, {
+            name: "button4"
+        });
+        button4.text = "all";
+
+        // PALETTE
+        // =======
+        var group3 = palette.add("group", undefined, {
+            name: "group3"
+        });
+        group3.orientation = "column";
+        group3.alignChildren = ["left", "center"];
+        group3.spacing = 10;
+        group3.margins = 0;
+
+        var button5 = group3.add("button", undefined, undefined, {
+            name: "button5"
+        });
+        button5.text = "?";
+
+        var button6 = group3.add("button", undefined, undefined, {
+            name: "button6"
+        });
+        button6.text = "Cheat";
+
+
+        // onClick
+        // =======
+        button1.onClick = small;
+        button2.onClick = DVFX;
+        button3.onClick = social;
+        button4.onClick = DesignforMotion;
+        button5.onClick = help;
+        button6.onClick = cheat;
+
+        palette.layout.layout(true);
+        palette.layout.resize();
+
+        palette.onResizing = palette.onRize = function() {
+            this.layout.resize();
+        }
+
+    } //if (palette != null )
+    return palette;
+} //function buildUI (thisObject)
+
+// Declaring functions
+
+function small() {
+    app.beginUndoGroup("small");
+
+    // Put comma between folder names & NO space between
+    var str = "comps,precomps,assets,reference";
+    var arr = str.split(",");
+
+    for (i = 0; i < arr.length; i++) {
+        app.project.items.addFolder("0" + i + "_" + arr[i].toString().toUpperCase());
+    }
+    app.project.items.addFolder("Ω MESSY");
+
+}
+
+function DVFX() {
+
+    alert("Folder Hierarchy Information \n Output — Comps to be rendered out  \n Main_Comps — Scene  \n Precomps — Elements \n\n Assets — logos,photos,footage,MOVs,textures,audio \n Reference — references eg. pixel/canvas maps \n MESSY — A temporary place to keep working files\n")
+
+
+    app.beginUndoGroup("createFolders");
+
+    // Put comma between folder names & NO space between
+    var str = "output,main_comps,precomps,assets,reference";
+    var arr = str.split(",");
+
+
+
+    //Create parent folders
+    for (i = 0; i < arr.length; i++) {
+        app.project.items.addFolder("0" + i + "_" + arr[i].toString().toUpperCase());
+    }
+    app.project.items.addFolder("Ω MESSY");
+
+    // Create subfolders using loop
+    var subfoldersStr = "a_LOGO,b_PHOTOGRAPHY,c_FOOTAGE,d_MOVS,e_TEXTURES,f_AUDIO"
+        var subfoldersArr = subfoldersStr.split(",");
+    for (i = 0; i < subfoldersArr.length; i++) {
+        var assetSub = app.project.items.addFolder(subfoldersArr[i].toString());
+        assetSub.parentFolder = app.project.item(4);
+    }
+}
+
+
+
+function DesignforMotion() {
+    app.beginUndoGroup("DesignforMotion");
+
+    // Put comma between folder names & NO space between
+    var str = "output,main_comps,precomps,assets,reference,projects,renders";
+    var arr = str.split(",");
+
+
+
+    //Create parent folders
+    for (i = 0; i < arr.length; i++) {
+        app.project.items.addFolder("0" + i + "_" + arr[i].toString().toUpperCase());
+    }
+
+    // Create subfolders using loop
+    var subfoldersStr = "3D,FOOTAGE,RASTER,VECTOR"
+    var subfoldersArr = subfoldersStr.split(",");
+    for (i = 0; i < subfoldersArr.length; i++) {
+        var assetSub = app.project.items.addFolder(subfoldersArr[i].toString());
+        assetSub.parentFolder = app.project.item(4);
+    }
+
+    // Create 2nd level subfolders using loop
+    var ssStr = "AI,EPS"
+    var ssArr = ssStr.split(",");
+    for (i = 0; i < ssArr.length; i++) {
+        var ssSub = app.project.items.addFolder(ssArr[i].toString());
+        ssSub.parentFolder = app.project.item(8);
+    }
+
+    var ssStr = "JPEG,PSD,TIFF"
+    var ssArr = ssStr.split(",");
+    for (i = 0; i < ssArr.length; i++) {
+        var ssSub = app.project.items.addFolder(ssArr[i].toString());
+        ssSub.parentFolder = app.project.item(7);
+    }
+
+    var ssStr = "QUICKTIME,SEQUENCE"
+    var ssArr = ssStr.split(",");
+    for (i = 0; i < ssArr.length; i++) {
+        var ssSub = app.project.items.addFolder(ssArr[i].toString());
+        ssSub.parentFolder = app.project.item(6);
+    }
+
+
+    app.project.items.addFolder("Ω MESSY");
+}
+
+
+function social() {
+    app.beginUndoGroup("social");
+
+    // Put comma between folder names & NO space between
+    var str = "F_Comps,P_Comps,Sources,Reference Projects";
+    var arr = str.split(",");
+
+
+
+    //Create parent folders
+    for (i = 0; i < arr.length; i++) {
+        app.project.items.addFolder((i+1) + "_" + arr[i].toString());
+    }
+
+    // Create subfolders using loop
+    var subfoldersStr = "a_Ftg,b_Istock,c_Istock Video,d_Logos,e_Player CO,f_Photoshop,g_Imports,h_Audio"
+    var subfoldersArr = subfoldersStr.split(",");
+    for (i = 0; i < subfoldersArr.length; i++) {
+        var assetSub = app.project.items.addFolder(subfoldersArr[i].toString());
+        assetSub.parentFolder = app.project.item(3);
+    }
+    alert('Filenaming convention:\n 2019_Client_ProjectName')
+}
+
+
+
+function help() {
+    alert('nsc_folderStructurer_v01 \n Created by Desmond Du \n 8 Jan 2020')
+}
+
+
+function cheat() {
+    // Cheatsheet
+    // Cheatsheet
+
+
+    alert('Cheatsheet \
+    NAMING CONVENTION \
+    -  SOCIAL: 2019_Client_ProjectName \
+    -  MOTION: Project_element_version_initials \
+       eg: SX_lower3rd_v1_ddu; \n\
+    SHORTCUTS \
+    -  Cmd + Control + H or Cmd+H : Replace Footage \
+    -  Preferences: Cmd + Option + ; \n\
+    FX: \
+    - Saber — Tapering strokes \
+    - FL Out Of Focus — Better camera blur \
+    - Drop shadows: Real shadow  \
+    - Glow: Deep Glow or Optical Glow \n\
+    \
+    SCRIPTS:\
+    - nsc_folderStructurer: create folder structures \
+    - qafterfx: send render queue items to render farm \
+    \
+    EXTENSIONS: \
+    - Console FX: Control + Spacebar \
+    - Immigration Beta: automatically create image seqs from a source folder \
+    - Motion 2 — Anchor point positioning & other stuff\
+    - Project Cleaner — Remove unused items \
+    - DefaultOutputModuleTemplate  \
+    \
+    EXPRESSIONS: \
+    linear(time,inPoint,outPoint,minValue,maxValue) — properties will animate from in to out points \n\
+    \n\
+    \
+    Created by Desmond Du · 24 Oct 2019\
+    ');
+
+    /*
+    Delivery format:
+
+    If you need help, please call 5-best
+
+
+     */
+
+    /*
+    Delivery format:
+
+    If you need help, please call 5-best
+
+
+     */
+
+}

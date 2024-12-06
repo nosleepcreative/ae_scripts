@@ -1,3 +1,24 @@
+/*
+Script Name: Create Drop Shadow Shape
+Description: 
+- Quickly create a drop shadow for increasing readability of text on-screen using a masked shape layer
+
+Author: Desmond Du
+Website: duitbetter.com, https://github.com/nosleepcreative, https://www.youtube.com/@NoSleepCreative
+Version: 1.0 
+Date: [DATE], 2024
+Copyright(c) 2024 nosleepcreative (Desmond Du). All rights reserved
+
+Use Case:
+
+Also see:
+
+Change Log:
+
+Future improvements:
+
+*/
+
 function createShapeWithPreset(path) {
     var comp = app.project.activeItem;
     if (!(comp instanceof CompItem)) return alert("Select a valid composition.");
@@ -13,8 +34,6 @@ function createShapeWithPreset(path) {
     var originalTime = comp.time;
     comp.time = 0;
     layer.applyPreset(ffx);
-    // Uncomment if guide layer is needed
-    // layer.guideLayer = true;
     comp.time = originalTime;
 
     app.endUndoGroup();
