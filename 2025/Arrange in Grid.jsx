@@ -103,8 +103,9 @@ function arrangeInGrid() {
         layer.position.setValue([xPos, yPos]);
 
         // Scale to fit within the grid cell
-        var scaleX = (cellWidth / layer.width) * 100;
-        var scaleY = (cellHeight / layer.height) * 100;
+        var scaleFactor = (1/pct*100) * 0.96;
+        var scaleX = (cellWidth / layer.width) * scaleFactor;
+        var scaleY = (cellHeight / layer.height) * scaleFactor;
         var scaleValue = Math.min(scaleX, scaleY);
         layer.audioEnabled = false;
         layer.scale.setValue([scaleValue, scaleValue]);

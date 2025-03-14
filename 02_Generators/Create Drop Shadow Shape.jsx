@@ -25,7 +25,7 @@ function createShapeWithPreset(path) {
 
     app.beginUndoGroup("Create Guide Layer");
     var layer = comp.layers.addShape();
-    layer.name = "Shadow";
+    layer.name = "◈ Shadow";
     layer.label = 15;
 
     var ffx = new File(path);
@@ -40,5 +40,5 @@ function createShapeWithPreset(path) {
 }
 
 // Run the function with the preset file path
-var filePath1 = "C:/Users/Desmond/Documents/Adobe/After Effects 2024/User Presets/02.01 Generators/Drop Shadow Shape.ffx";
+var filePath1 = "C:/Users/Desmond/Documents/Adobe/After Effects 2025/User Presets/02.01 Generators/Drop Shadow Shape.ffx";
 createShapeWithPreset(filePath1);

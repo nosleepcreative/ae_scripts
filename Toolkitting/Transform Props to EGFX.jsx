@@ -70,7 +70,9 @@ function addMP(properties, comp, layerName) {
     for (var i = 0; i < selectedLayers.length; i++) {
         var layer = selectedLayers[i];
 
-        // Add Checkbox Control
+       
+
+        // Add Checkbox Control for Visibility
         var checkboxControl = layer.property("ADBE Effect Parade").addProperty("ADBE Checkbox Control");
         checkboxControl.name = "Visiblilty";
         checkboxControl
@@ -88,6 +90,12 @@ function addMP(properties, comp, layerName) {
             layer.property("ADBE Transform Group").property("ADBE Position"),
             layer.property("ADBE Transform Group").property("ADBE Scale")
         ];
+        
+        // If the layer is a text layer, include Source Text
+        if (layer.property("Source Text") !== null) {
+            essentialProps.unshift(layer.property("Source Text"));
+        }
+
         addMP(essentialProps.reverse(), comp, layer.name);
     }
 

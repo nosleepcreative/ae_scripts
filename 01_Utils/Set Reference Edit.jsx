@@ -57,7 +57,13 @@ if (ScriptUI.environment.keyboardState.shiftKey) {
     var layer = layers[0];
     layer.guideLayer = !layer.guideLayer;
     layer.name = "REFERENCE EDIT";
-    layer.label = 14;
+    layer.label = 15; // Sandstone
+    layer.moveToBeginning();
+    var audioLevelsProp = layer.property("ADBE Audio Group").property("ADBE Audio Levels");
+    if (audioLevelsProp) {
+        // Set the audio levels to -10 dB for both channels
+        audioLevelsProp.setValue([-10, -10]);
+    }
 
     /*
     if (layer.hasAudio) {
